@@ -3,8 +3,9 @@ package com.stonewater.daggerhiltcourse.data.remote
 import android.app.Application
 import com.stonewater.daggerhiltcourse.R
 import com.stonewater.daggerhiltcourse.domain.repository.DummyRepository
+import javax.inject.Inject
 
-class DummyRepositoryImpl(
+class DummyRepositoryImpl @Inject constructor(
     private val api: DummyApi,
     private val appContext: Application
 ): DummyRepository {

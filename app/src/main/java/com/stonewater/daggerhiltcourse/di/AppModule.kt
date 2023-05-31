@@ -28,19 +28,6 @@ object AppModule {
             .create(DummyApi::class.java)
     }
 
-    /**
-     * Injects the repository implementation (which also injects the Api)
-     * */
-    @Provides
-    @Singleton
-    fun provideDummyRepository(
-        api: DummyApi,
-        app: Application,
-        @Named("hello1") hello: String
-    ): DummyRepository {
-        return DummyRepositoryImpl(api, app)
-    }
-
     @Provides
     @Singleton
     @Named("hello1")
