@@ -9,10 +9,14 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class DummyService @Inject constructor( // NOT POSSIBLE as a service CANNOT have a constructor
-    private val repository: DummyRepository
-): Service() {
+class DummyService: Service() {
+    @Inject
+    lateinit var repository: DummyRepository
 
+    override fun onCreate() {
+        super.onCreate()
+        /* service code here */
+    }
 
     override fun onBind(intent: Intent?): IBinder? {
         return null
