@@ -12,7 +12,7 @@ class DummyRepositoryImpl @Inject constructor(
 
     init {
         val appName = appContext.getString(R.string.app_name)
-        println("Un petit Bonjour du repository. Le nom de l'application est $appName")
+        println("[Message]: Un petit Bonjour du repository. Le nom de l'application est $appName")
     }
     override suspend fun doNetworkCall() {
 
